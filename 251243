@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Fire Diamond Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: white;
+      text-align: center;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #00ffd5;
+    }
+    input, select {
+      padding: 12px;
+      margin: 12px auto;
+      width: 80%;
+      max-width: 320px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      display: block;
+    }
+    .button, .disabled-button {
+      background: #00ff91;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 12px;
+      margin-top: 20px;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .disabled-button {
+      background: gray;
+      cursor: not-allowed;
+    }
+    .progress-box {
+      display: none;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+    .share-info {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ffcc00;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Free Fire Diamond Generator 🔥</h1>
+    <p>Enter your UID and Share this page with 20 friends to unlock claim button!</p>
+    <input type="text" id="uid" placeholder="Enter your Free Fire UID" />
+    <div class="share-info" id="shareInfo">
+      You have shared with <span id="shareCount">0</span> friends. (Need 20)
+    </div>
+    <button class="button" onclick="shareNow()">Share Now</button>
+    <button class="disabled-button" id="claimBtn" onclick="startGeneration()" disabled>Claim 500 Diamonds</button>
+
+    <div class="progress-box" id="progressBox">
+      <p id="progressText">Processing...</p>
+    </div>
+
+    <footer>
+      <p>Powered by Garena™ | Not affiliated with Garena</p>
+    </footer>
+  </div>
+
+  <script>
+    let shareCount = 0;
+    function shareNow() {
+      shareCount++;
+      document.getElementById("shareCount").innerText = shareCount;
+      if (shareCount >= 20) {
+        document.getElementById("claimBtn").classList.remove("disabled-button");
+        document.getElementById("claimBtn").classList.add("button");
+        document.getElementById("claimBtn").disabled = false;
+        document.getElementById("shareInfo").innerText = "✅ Share completed. You can now claim 500 Diamonds!";
+      }
+    }
+
+    function startGeneration() {
+      var uid = document.getElementById('uid').value;
+      if (!uid || uid.length < 6) {
+        alert("Please enter a valid Free Fire UID.");
+        return;
+      }
+
+      var progressBox = document.getElementById("progressBox");
+      var progressText = document.getElementById("progressText");
+      progressBox.style.display = "block";
+
+      let steps = [
+        "Connecting to Free Fire server...",
+        "Verifying UID...",
+        "Injecting 500 Diamonds...",
+        "Finalizing...",
+        "Please complete a verification to receive Diamonds."
+      ];
+
+      let i = 0;
+      let interval = setInterval(() => {
+        progressText.innerText = steps[i];
+        i++;
+        if (i === steps.length) {
+          clearInterval(interval);
+          window.location.href = "https://www.profitableratecpm.com/aqvf0fv0z1?key=9a79dd5a4ad70fd76ceb696a2ce90701";
+        }
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
